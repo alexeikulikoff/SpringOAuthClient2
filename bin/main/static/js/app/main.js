@@ -5,7 +5,7 @@ $(document).ready(function(){
     
     $.get( "/oauth", function( data ) {
     	  console.log(data);
-    	  location.href = "/hello";
+    	 // location.href = "/hello";
     });
   });
 });

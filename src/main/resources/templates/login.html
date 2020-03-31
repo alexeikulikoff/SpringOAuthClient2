@@ -16,12 +16,12 @@
             <div><label> Password: <input type="password" name="password"/> </label></div>
             <div><input type="submit" value="Sign In"/></div>
         </form>
-    
+     <form th:action="@{/oauth}" method="get">
           <div><input id="login-with" type="submit" value="Login with..."/></div>
-       
+       </form>
        
         <script src="/js/jquery/jquery.min.js"></script>
-        <script src="/js/app/main.js"></script>
+       
       
     </body>
 </html>
