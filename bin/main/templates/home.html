@@ -1,11 +1,98 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-    <head>
-        <title>Spring Security Example</title>
-    </head>
-    <body>
-        <h1>Welcome!</h1>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
 
-        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
-    </body>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OAuth Demo</title>
+
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<nav class="navbar-default navbar-static-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav metismenu" id="side-menu">
+					<li class="nav-header">
+						<div class="dropdown profile-element"></div>
+
+					</li>
+				</ul>
+
+			</div>
+		</nav>
+
+		<div id="page-wrapper" class="gray-bg">
+			<div class="row border-bottom">
+				<nav class="navbar navbar-static-top" role="navigation"
+					style="margin-bottom: 0">
+					<div class="navbar-header"></div>
+					<ul class="nav navbar-top-links navbar-right">
+						<li><span class="m-r-sm text-muted welcome-message top-35"></span></li>
+					</ul>
+
+				</nav>
+			</div>
+			<div class="row wrapper border-bottom white-bg page-heading">
+				<div class="col-lg-10">
+					<h2>OAuth2 + Github user access demo</h2>
+
+				</div>
+				<div class="col-lg-2"></div>
+			</div>
+			<div class="wrapper wrapper-content">
+				<div class="row animated fadeInRight">
+					<div class="col-md-6">
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>How it works</h5>
+							</div>
+							<div>
+								<div class="ibox-content no-padding border-left-right"></div>
+								<div class="ibox-content profile-content">
+
+									<p>1. Login in  Github with provided login and password</p>
+									<p>2. Go to Settings->Developer Setting->OAuth Apps->FDS</p>
+									<p>3. Push button <strong>Revoke all user tokens</strong></p>
+									<p>4. Press <strong>Login</strong> to login via GitHub</p>
+
+									<div class="user-button">
+										<div class="row">
+											<div class="col-md-4">
+
+												<form th:action="@{/login}" method="post">
+													<button type="submit"
+														class="btn btn-primary block full-width m-b">Login</button>
+												</form>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="footer">
+				<div class="pull-right">
+					<strong>OAuth </strong>
+				</div>
+				<div>
+					<strong>Copyleft</strong> Example Company &copy; 2020
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
 </html>

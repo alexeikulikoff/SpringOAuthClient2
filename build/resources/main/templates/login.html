@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OAuth Demo</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+
+	<div class="middle-box text-center loginscreen animated fadeInDown">
+		<div>
+			<div>
+				
+			</div>
+			<h3>Welcome to OAuth 2.0</h3>
+			<p>To enter as a regular user use login <b>admin</b>, password <b>123</b>.</p>
+			<p>
+				To login via GitHub acount press Login with GitHub button
+				<!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
+			</p>
+			<p>Login in. To see it in action.</p>
+			<form class="m-t" role="form"  th:action="@{/login}" method="post">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Username"
+						name="username" >
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" placeholder="Password"
+						 name="password">
+				</div>
+				<button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+			</form>	
+			<form class="m-t" role="form"  th:action="@{/oauth}" method="get">	
+				<button type="submit" class="btn btn-primary block full-width m-b">Login
+					with GitHub</button>
+			</form>
+			<p class="m-t">
+				<small></small>
+			</p>
+		</div>
+	</div>
+
+
+</body>
+
+</html>

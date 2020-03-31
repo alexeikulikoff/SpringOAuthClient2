@@ -62,18 +62,6 @@ public class RootController {
 	@Autowired
 	private AppConfig appConfig;
 
-	@GetMapping("/greeting")
-	public String greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name,
-			Model model) {
-		model.addAttribute("name", name);
-		return "greeting";
-	}
-
-	@RequestMapping("/csrf")
-	public CsrfToken csrf(CsrfToken token) {
-		return token;
-	}
-
 	@RequestMapping("/callback")
 	public String callback(@RequestParam(value = "code") String code, @RequestParam(value = "state") String state,
 			Model model) throws IOException {
@@ -159,7 +147,7 @@ public class RootController {
 		Authentication auth = new UsernamePasswordAuthenticationToken(usersDetails, null,
 				usersDetails.getAuthorities());
 		SecurityContextHolder.getContext().setAuthentication(auth);
-		return "redirect:hello";
+		return "redirect:profile";
 
 	}
 
@@ -184,5 +172,17 @@ public class RootController {
 			resp.sendRedirect("/login");
 		}
 
+	}
+
+	@GetMapping("/greeting")
+	public String greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name,
+			Model model) {
+		model.addAttribute("name", name);
+		return "greeting";
+	}
+
+	@RequestMapping("/csrf")
+	public CsrfToken csrf(CsrfToken token) {
+		return token;
 	}
 }

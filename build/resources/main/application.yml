@@ -1,0 +1,26 @@
+app:
+    client_id: 611f43c030371f5d7297
+    client_secret: 0d013731236e856bf283698a4cfd1d7ed2ed9439
+    redirect_uri: http://localhost:8080/callback
+    authorize_url: https://github.com/login/oauth/authorize/
+    access_token_url: https://github.com/login/oauth/access_token
+    get_user_url: https://api.github.com/user
+
+spring:
+    mvc:
+          favicon:
+             enabled : true
+    thymeleaf: 
+          cache: false
+    datasource:
+        url: jdbc:mysql://localhost:3306/aouthdata?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        username: admin
+        password: kukla
+    jpa:
+        show-sql: false 
+        database-platform: org.hibernate.dialect.MySQL5Dialect
+        hibernate: 
+              ddl-auto: update
+              
+
+              
